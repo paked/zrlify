@@ -26,7 +26,15 @@ function zrlify() {
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
 
+        var w = image.width;
+        var h = image.height;
+
         image.src = zrls[randInt(0, zrls.length)];
+        image.width = w;
+        image.height = h;
+
+        image.style.width = w + "px";
+        image.style.height = h + "px";
     }
 
     var els = document.getElementsByTagName('*');

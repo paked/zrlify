@@ -8,9 +8,7 @@ for (var i = 0; i < 5; i++) {
 
 function addZrlify() {
     var observer = new window.WebKitMutationObserver(function(mutations, observer) {
-        mutations.forEach(function(mutation) {
-            zrlify();
-        });
+        zrlify();
     });
 
     observer.observe(document, {

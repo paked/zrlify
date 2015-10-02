@@ -17,9 +17,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         image.src = zrls[randInt(0, zrls.length)];
     }
 
-    var styling = document.querySelectorAll('style,link');
-    for (var i = 0; i < styling.length; i++) {
-        styling[i].parentNode.removeChild(styling[i]); 
+    var els = document.getElementsByTagName('*');
+    for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+
+        var style = window.getComputedStyle(el, null);
+
+        el.style.color = "black";
+        el.style.backgroundColor = "white";
+        el.style.borderColor = "black";
     }
 });
 

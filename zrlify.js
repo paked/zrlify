@@ -22,10 +22,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var el = els[i];
 
         var style = window.getComputedStyle(el, null);
+        // console.log(style);
 
         el.style.color = "black";
+        el.style.background = "none";
         el.style.backgroundColor = "white";
+
         el.style.borderColor = "black";
+        el.style.borderRadius = "0px";
+        el.style.borderImage = "0px";
     }
 });
 

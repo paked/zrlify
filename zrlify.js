@@ -1,5 +1,3 @@
-MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
 console.log("zrlifying");
 
 var zrls = [];
@@ -22,6 +20,8 @@ function addZrlify() {
     });
 }
 
+var ascii = /^[ -~]*$/;
+
 function zrlify() {
     var images = document.getElementsByTagName("img");
 
@@ -37,9 +37,21 @@ function zrlify() {
         if (el.nodeType != Node.ELEMENT_NODE) {
             continue;
         }
-        
+
         el.style.fontFamily = "Times, \"Times New Roman\", serif";
-        el.style.color = "black";
+
+        var content = window.getComputedStyle(el, ':before')
+        var text = content.getPropertyValue('content')
+        if (!ascii.test(text)) {
+            el.style.fontFamily = "";
+        }
+
+        if (el.tagName == "A") {
+            el.style.color = "blue";
+        } else {
+            el.style.color = "black";
+        }
+
         el.style.background = "none";
         el.style.backgroundColor = "white";
         el.style.borderColor = "black";

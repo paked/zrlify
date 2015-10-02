@@ -7,7 +7,12 @@
 
   "browser_action": {
     "default_icon": "zrl.png",
-    "default_popup": "popup.html"
+    "default_title": "zrlify"
+  },
+
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
   },
 
   "content_scripts": [
@@ -16,5 +21,10 @@
       "js": ["zrlify.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "permissions": [
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ]
 }

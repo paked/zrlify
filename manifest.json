@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "zrlify",
+  "description": "zrlify ALL the websites",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "zrl.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["zrlify.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

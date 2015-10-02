@@ -37,11 +37,11 @@ function zrlify() {
         if (el.nodeType != Node.ELEMENT_NODE) {
             continue;
         }
-
+        
+        el.style.fontFamily = "Times, \"Times New Roman\", serif";
         el.style.color = "black";
         el.style.background = "none";
         el.style.backgroundColor = "white";
-
         el.style.borderColor = "black";
         el.style.borderRadius = "0px";
         el.style.borderImage = "0px";

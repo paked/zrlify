@@ -10,6 +10,12 @@
     "default_title": "zrlify"
   },
 
+  "icons": {
+    "16": "zrl_16.png",
+    "48": "zrl_48.png",
+    "128": "zrl_128.png"
+  },
+
   "background": {
       "scripts": ["background.js"],
       "persistent": false
@@ -22,6 +28,7 @@
       "run_at": "document_start"
     }
   ],
+
   "permissions": [
         "tabs",
         "http://*/",

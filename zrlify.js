@@ -32,17 +32,6 @@ function zrlify() {
     // Iterate over images in the web page and perform replacements
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
-
-        var w = image.width;
-        var h = image.height;
-
-        image.src = zrls[randInt(0, zrls.length)];
-
-        // Make sure that the image does not look too out of place by scaling it.
-        image.width = w;
-        image.height = h;
-        image.style.width = w + "px";
-        image.style.height = h + "px";
     }
 
     var els = document.getElementsByTagName('*');
@@ -66,6 +55,20 @@ function zrlify() {
             el.style.color = "blue";
         } else {
             el.style.color = "black";
+        }
+
+        if (el.tagName = "IMG") {
+            var image = el;
+            var w = image.width;
+            var h = image.height;
+
+            image.src = zrls[randInt(0, zrls.length)];
+
+            // Make sure that the image does not look too out of place by scaling it.
+            image.width = w;
+            image.height = h;
+            image.style.width = w + "px";
+            image.style.height = h + "px";
         }
 
         // Various style resets.

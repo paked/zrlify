@@ -3,7 +3,7 @@
 
   "name": "zrlify",
   "description": "zrlify ALL the websites",
-  "version": "1.0",
+  "version": "1.1",
 
   "browser_action": {
     "default_icon": "zrl.png",

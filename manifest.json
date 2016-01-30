@@ -33,5 +33,8 @@
         "tabs",
         "http://*/",
         "https://*/"
-    ]
+  ],
+  "web_accessible_resources": [
+    "img/*.jpg"
+  ]
 }

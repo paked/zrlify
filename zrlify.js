@@ -1,11 +1,13 @@
 console.log("zrlifying");
 
-var zrls = [];
-
-// Generate zrl image URLs
-for (var i = 1; i <= 5; i++) {
-    zrls.push("https://alexb.io/f/zach" + i + ".jpg");
-}
+var zrls = [
+    "artsy_zach.jpg",
+    "orbit_profile.jpg",
+    "thiel_profile.jpg",
+    "castro_hacking.jpg",
+    "talk.jpg",
+    "zach_and_jonathan.jpg"
+];
 
 function randInt(min, max) {
     return Math.floor((Math.random() * max) + min);
@@ -27,13 +29,6 @@ function addZrlify() {
 var ascii = /^[ -~]*$/;
 
 function zrlify() {
-    var images = document.getElementsByTagName("img");
-
-    // Iterate over images in the web page and perform replacements
-    for (var i = 0; i < images.length; i++) {
-        var image = images[i];
-    }
-
     var els = document.getElementsByTagName('*');
     for (var i = 0; i < els.length; i++) {
         var el = els[i];
@@ -62,7 +57,7 @@ function zrlify() {
             var w = image.width;
             var h = image.height;
 
-            image.src = zrls[randInt(0, zrls.length)];
+            image.src = chrome.extension.getURL("img/" + zrls[randInt(0, zrls.length)]);
 
             // Make sure that the image does not look too out of place by scaling it.
             image.width = w;
